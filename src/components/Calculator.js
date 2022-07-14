@@ -2,36 +2,43 @@ import './Calculator.css';
 import React from 'react';
 import Button from './Button';
 import Screen from './Screen';
+import calculate from '../logic/calculate';
 
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.onButtonPress = this.onButtonPress.bind(this);
+  }
+
+  onButtonPress({ target }) {
+    this.setState((state) => calculate(state, target.innerText));
   }
 
   render() {
+    const { total, next, operation } = this.state;
     return (
       <article className="calculator">
-        <Screen cName="screen" result="0" />
-        <Button bgColor="btn-gray" btnRef="AC" />
-        <Button bgColor="btn-gray" btnRef="+/-" />
-        <Button bgColor="btn-gray" btnRef="%" />
-        <Button bgColor="btn-orange" btnRef="÷" />
-        <Button bgColor="btn-gray" btnRef="7" />
-        <Button bgColor="btn-gray" btnRef="8" />
-        <Button bgColor="btn-gray" btnRef="9" />
-        <Button bgColor="btn-orange" btnRef="x" />
-        <Button bgColor="btn-gray" btnRef="4" />
-        <Button bgColor="btn-gray" btnRef="5" />
-        <Button bgColor="btn-gray" btnRef="6" />
-        <Button bgColor="btn-orange" btnRef="-" />
-        <Button bgColor="btn-gray" btnRef="1" />
-        <Button bgColor="btn-gray" btnRef="2" />
-        <Button bgColor="btn-gray" btnRef="3" />
-        <Button bgColor="btn-orange" btnRef="+" />
-        <Button bgColor="btn-gray zero" btnRef="0" />
-        <Button bgColor="btn-gray" btnRef="." />
-        <Button bgColor="btn-orange" btnRef="=" />
+        <Screen total={total} next={next} operation={operation} />
+        <Button bgColor="btn-gray" btnRef="AC" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-gray" btnRef="+/-" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-gray" btnRef="%" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-orange" btnRef="÷" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-gray" btnRef="7" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-gray" btnRef="8" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-gray" btnRef="9" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-orange" btnRef="x" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-gray" btnRef="4" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-gray" btnRef="5" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-gray" btnRef="6" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-orange" btnRef="-" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-gray" btnRef="1" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-gray" btnRef="2" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-gray" btnRef="3" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-orange" btnRef="+" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-gray zero" btnRef="0" handleClick={this.onButtonPress} />
+        <Button bgColor="btn-gray" btnRef="." handleClick={this.onButtonPress} />
+        <Button bgColor="btn-orange" btnRef="=" handleClick={this.onButtonPress} />
       </article>
     );
   }
