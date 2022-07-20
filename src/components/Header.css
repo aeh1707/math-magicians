@@ -1,0 +1,18 @@
+h1 {
+  width: 25vw;
+  margin-right: 45vw;
+  font-size: 2rem;
+}
+
+header {
+  width: 85vw;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  width: 25vw;
+  display: flex;
+  justify-content: space-between;
+}
