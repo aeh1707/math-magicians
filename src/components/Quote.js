@@ -16,7 +16,7 @@ class Quote extends React.Component {
           <blockquote>
             <p>
               Carl Friedrich Gauss: &quot;Mathematics is the queen of science,
-              and arithmetic the queen of mathematicss.&quot;
+              and arithmetic the queen of mathematics.&quot;
             </p>
           </blockquote>
         </main>
