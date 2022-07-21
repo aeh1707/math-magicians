@@ -1,4 +1,4 @@
-import calculate from './calculate';
+import calculate from '../logic/calculate';
 
 it('check if obj.next to equal 5', () => {
   const btnPressed = '5';
